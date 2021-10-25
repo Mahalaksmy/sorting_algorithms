@@ -48,6 +48,11 @@ void bubble_sort(int *array, size_t size)
 	size_t i, count = 0;
 	int *cpy = malloc(size * sizeof(int));
 
+	if (array == NULL)
+		return;
+	if (cpy == NULL)
+		return;
+
 	for (i = 0; i < size; i++)
 		cpy[i] = array[i];
 
