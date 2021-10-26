@@ -25,7 +25,7 @@ void print_array(const int *array, size_t size);
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
 void selection_sort(int *array, size_t size);
-
+int sorted_array(int *array, size_t size);
 void recursive_loop(int *array, int *cpy, size_t size, size_t count);
 void nodes_swap(listint_t *nodenext, listint_t *nodeprev);
 void swap(int *a, int *b);

@@ -5,14 +5,19 @@
  * in ascending order using the Selection sort algorithm
  * @array: The array of the integer
  * @size: the size of the array
- * Return: Nothing, It is a function void
+ * Return: Zero
  */
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, min_elem;
+	size_t i, j;
+	int min_elem;
+
 
 	for (i = 0; i < size - 1; i++)
 	{
+		if (sorted_array(array, size) == 1)
+			break;
+
 		min_elem = i;
 		for (j = i + 1; j < size; j++)
 		{
@@ -28,11 +33,31 @@ void selection_sort(int *array, size_t size)
 *swap - swaps between two elements of an array
 *@a: The element a
 *@b: The elemewt b
-Return: Nothing, It is a function void
+*Return: Nothing, It is a function void
 */
 void swap(int *a, int *b)
 {
 	int temp = *a;
 	*a = *b;
 	*b = temp;
+}
+
+/**
+ * sorted_array - checks if the array is sorted
+ * @array: the array
+ * @size: the size of the array
+ *
+ * Return: Returns 1 if array is sorted, 0 if array is unsorted
+ */
+int sorted_array(int *array, size_t size)
+{
+	int i;
+
+	for (i = 0; i < (int) size - 1; i += 1)
+	{
+		if (array[i] > array[i + 1])
+			return (0);
+	}
+
+	return (1);
 }
